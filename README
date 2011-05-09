@@ -1,0 +1,3 @@
+npm install mysql
+npm install sequelize
+
