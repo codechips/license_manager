@@ -1,4 +1,6 @@
+require.paths.unshift  '.'
 express = require 'express'
+models = require 'models'
 app = module.exports = express.createServer()
 
 app.configure ->
@@ -28,6 +30,21 @@ app.get '/', (req, res) ->
 
 app.get '/new', (req, res) ->
   res.render 'new'
+
+app.post '/new', (req, res) ->
+  license = req.body.license
+  console.log license
+  o = models.License.build
+      'name': license.user
+      'product': license.product
+      'key' : license.key
+
+  o.save().on("success", ->
+    res.redirect '/'
+  )
+  .on("failure", ->
+    res.render 'new', locals: license
+  )
 
 #Only listen on $ node app.js
 

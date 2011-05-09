@@ -10,8 +10,9 @@ User.sync()
 exports.User = User
 
 License = sql.define "License"
-  firstName : Sequelize.STRING
-  lastName : Sequelize.STRING
+  name : Sequelize.STRING
+  product : Sequelize.STRING
+  key : Sequelize.STRING
 
 License.sync()
 
