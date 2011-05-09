@@ -5,7 +5,7 @@ User = sql.define "User"
   firstName : Sequelize.STRING
   lastName : Sequelize.STRING
 
-User.sync
+User.sync()
 
 exports.User = User
 
@@ -13,7 +13,7 @@ License = sql.define "License"
   firstName : Sequelize.STRING
   lastName : Sequelize.STRING
 
-License.sync
+License.sync()
 
 exports.License = License
 
