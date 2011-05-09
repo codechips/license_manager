@@ -1,0 +1,13 @@
+h2 Skapa en ny licens
+form#post(action=base + '/new', method='post')
+  p
+    label(for='license['user']) Användare
+    input(type='text', name='license[user]')
+  p
+    label(for='license['product']) Produktnamn
+    input(type='text', name='license[product]')
+  p
+    label(for='license['product']) Licens
+    input(type='text', name='license[license]')
+  p
+    input(type='submit', value='Skapa')

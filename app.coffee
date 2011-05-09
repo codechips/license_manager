@@ -11,6 +11,9 @@ app.configure ->
   app.use app.router
   app.use express.static(__dirname + '/public')
 
+app.dynamicHelpers
+  base: ->
+    if '/' is app.route then '' else app.route
 
 app.configure 'development', ->
   app.use express.errorHandler { dumpExceptions: true, showStack: true }
@@ -18,11 +21,13 @@ app.configure 'development', ->
 app.configure 'production', ->
   app.use express.errorHandler()
 
-
 #Routes
 
 app.get '/', (req, res) ->
   res.render 'index', { title: 'Application Title' }
+
+app.get '/new', (req, res) ->
+  res.render 'new'
 
 #Only listen on $ node app.js
 
