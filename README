@@ -1,3 +1,5 @@
-npm install mysql
-npm install sequelize
+npm install -g coffee-script mysql 
+npm install express sequelize jade
 
+Eftersom moduler installerade med npm hamnar på vitt skilda ställen är det en bra ide att lägga till följande till sin bash_profile:
+export NODE_PATH=/usr/local/lib/node:/usr/local/lib/node_modules:./node_modules
