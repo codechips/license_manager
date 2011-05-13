@@ -29,7 +29,8 @@ app.get '/', (req, res) ->
   res.render 'index', { title: 'Application Title' }
 
 app.get '/new', (req, res) ->
-  res.render 'new'
+  license = models.License.build()
+  res.render 'new', locals: { license: license }
 
 app.post '/new', (req, res) ->
   license = req.body.license
@@ -43,7 +44,7 @@ app.post '/new', (req, res) ->
     res.redirect '/'
   )
   .on("failure", ->
-    res.render 'new', locals: license
+    res.render 'new', locals: { license: license }
   )
 
 #Only listen on $ node app.js
