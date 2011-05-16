@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+
+#container {
+  background: #fff;
+  margin: 0 auto 40px;
+  width: 480px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 5px 6px 0;
+}  
+
+#content { padding: 30px; }
+
+#content h1 {
+  text-align: center;
+  -moz-text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -o-text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+ul#licenses { padding: 0 0 0 5px; }
+
+li.license {
+  list-style: none;
+  padding: 8px 0;
+  border-bottom: 1px solid #999;
+}
+
+li.license span {
+  margin-right: 10px;
+  padding: 5px; }
+li.license .name { font-weight: bold; }
+li.license .name:after { content: ":"; }
+li.license .product {
+  background-color: #66FF66;
+  -moz-border-radius: 6px;
+}

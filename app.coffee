@@ -30,7 +30,7 @@ app.get '/', (req, res) ->
   #models.License.all.on("success", (result) ->
   # Here be the results of the query, #Todo: put the result in the locals hash
   #)
-  locals["title"] = "License Manager index"
+  locals["title"] = "Licenses"
   # Here be fake liceses. #Todo: Remove when query above works as expected
   licenses = (models.License.build('name':'Sune Mang', 'product':'intellij '+num, 'key':'1234'+num) for num in [10..1])
   locals["licenses"]=licenses
