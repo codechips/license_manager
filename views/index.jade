@@ -1,2 +1,7 @@
-p This is index
-
+h1 #{title}
+ul
+  - each license in licenses
+    li
+      span.name #{license.name}
+      span.product #{license.product}
+      span.key #{license.key}

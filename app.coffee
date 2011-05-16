@@ -26,7 +26,15 @@ app.configure 'production', ->
 #Routes
 
 app.get '/', (req, res) ->
-  res.render 'index', { title: 'Application Title' }
+  locals = {}
+  #models.License.all.on("success", (result) ->
+  # Here be the results of the query, #Todo: put the result in the locals hash
+  #)
+  locals["title"] = "License Manager index"
+  # Here be fake liceses. #Todo: Remove when query above works as expected
+  licenses = (models.License.build('name':'Sune Mang', 'product':'intellij '+num, 'key':'1234'+num) for num in [10..1])
+  locals["licenses"]=licenses
+  res.render 'index', locals: locals
 
 app.get '/new', (req, res) ->
   license = models.License.build()
