@@ -37,7 +37,7 @@ li.license {
 li.license span {
   margin-right: 10px;
   padding: 5px; }
-li.license .name { font-weight: bold; }
+li.license .version { font-weight: bold; }
 li.license .name:after { content: ":"; }
 li.license .product {
   background-color: #66FF66;

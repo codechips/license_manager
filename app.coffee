@@ -41,7 +41,7 @@ app.post '/new', (req, res) ->
   license = req.body.license
   console.log license
   o = models.License.build
-      'name': license.user
+      'version': license.user
       'product': license.product
       'key' : license.key
 
