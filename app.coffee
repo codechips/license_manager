@@ -52,6 +52,11 @@ app.post '/new', (req, res) ->
     res.render 'new', locals: { license: license }
   )
 
+app.get '/search', (req, res) ->
+  models.License.findAll({ where: { product: req.param('q')}}).on('success', (licenses) ->
+    res.render 'search', locals: { licenses: licenses}
+  )
+
 #Only listen on $ node app.js
 
 if !module.parent

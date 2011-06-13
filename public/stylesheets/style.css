@@ -26,20 +26,23 @@ body {
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
 
-ul#licenses { padding: 0 0 0 5px; }
+  form input { width: 200px; }
+  form input[type='submit'] { width: 100px; }
 
-li.license {
-  list-style: none;
-  padding: 8px 0;
-  border-bottom: 1px solid #999;
-}
+  ul#licenses { padding: 0 0 0 5px; }
 
-li.license span {
-  margin-right: 10px;
-  padding: 5px; }
-li.license .version { font-weight: bold; }
-li.license .name:after { content: ":"; }
-li.license .product {
-  background-color: #66FF66;
-  -moz-border-radius: 6px;
-}
+  li.license {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #999;
+  }
+
+  li.license span {
+    margin-right: 10px;
+    padding: 5px; }
+  li.license .version { font-weight: bold; }
+  li.license .name:after { content: ":"; }
+  li.license .product {
+    background-color: #66FF66;
+    -moz-border-radius: 6px;
+  }
