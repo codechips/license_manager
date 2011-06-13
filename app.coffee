@@ -59,6 +59,11 @@ app.get '/delete/:key', (req, res) ->
 		res.redirect '/'
 		)
 
+app.get '/search', (req, res) ->
+  models.License.findAll({ where: { product: req.param('q')}}).on('success', (licenses) ->
+    res.render 'search', locals: { licenses: licenses}
+  )
+
 #Only listen on $ node app.js
 
 if !module.parent
