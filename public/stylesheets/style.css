@@ -43,3 +43,7 @@ li.license .product {
   background-color: #66FF66;
   -moz-border-radius: 6px;
 }
+
+li.license a {
+	font-size: 12px;
+}

@@ -52,6 +52,13 @@ app.post '/new', (req, res) ->
     res.render 'new', locals: { license: license }
   )
 
+app.get '/delete/:key', (req, res) ->
+	models.License.find({where: {key:req.params.key}}).on('success', (license) ->
+		console.log 'Deleting license with key ' + license.key
+		license.destroy()
+		res.redirect '/'
+		)
+
 #Only listen on $ node app.js
 
 if !module.parent
