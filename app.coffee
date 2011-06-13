@@ -27,14 +27,11 @@ app.configure 'production', ->
 
 app.get '/', (req, res) ->
   locals = {}
-  #models.License.all.on("success", (result) ->
-  # Here be the results of the query, #Todo: put the result in the locals hash
-  #)
-  locals["title"] = "Licenses"
-  # Here be fake liceses. #Todo: Remove when query above works as expected
-  licenses = (models.License.build('name':'Sune Mang', 'product':'intellij '+num, 'key':'1234'+num) for num in [10..1])
-  locals["licenses"]=licenses
-  res.render 'index', locals: locals
+  models.License.all.on("success", (result) ->
+    locals["licenses"] = result
+    locals["title"] = "Licenses"
+    res.render 'index', locals: locals
+  )
 
 app.get '/new', (req, res) ->
   license = models.License.build()
