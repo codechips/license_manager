@@ -9,3 +9,14 @@ html
       #header
       #content!= body
 
+  script(id="licenseTemplate", type="text/x-jquery-tmpl")
+    li.license
+      span.version ${license.version}
+      span.product ${license.product}
+      span.key ${license.key}
+      a(href='/delete/${license.key}') Radera
+
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", type="text/javascript")
+  script(src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js", type="text/javascript")
+  script(src="/js/spine.min.js", type="text/javascript")
+  script(src="/js/main.js", type="text/javascript")
