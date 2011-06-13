@@ -1,0 +1,10 @@
+form
+  input(name="q", placeholder="Search")
+  input(type="submit", value="Search")
+
+ul#licenses
+  - each license in licenses
+    li.license
+      span.version #{license.version}
+      span.product #{license.product}
+      span.key #{license.key}
